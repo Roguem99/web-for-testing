@@ -2,7 +2,7 @@
 
 Testing website to validate frameworks. Utilizing the Astro framework for web development.
 
-# TOOLS
+## TOOLS
 
 - VS Code
 - NVM v1.2.2
