@@ -7,11 +7,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<a href="/about/" id="about" data-testid="box-about" class="glow-on-hover">
+	<a href="/about/" id="about" data-testid="box-about" class="button">
 		<h2>About</h2>
 	</a>
 
-	<a href="/blog/" id="about" data-testid="box-about" class="glow-on-hover">
+	<a href="/blog/" id="about" data-testid="box-about" class="button">
 		<h2>Blog</h2>
 	</a>
 	<Welcome />
@@ -19,80 +19,61 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 
-	#about {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		padding: 30px;
-		background: rgba(255, 255, 255, 1);
-		border: 1px solid white;
-		position: relative;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-		border-radius: 50%;
-		right: 0
-	}
+@import url('https://fonts.googleapis.com/css?family=Rubik:500');
 
-	.glow-on-hover {
-		width: 220px;
-		height: 50px;
-		border: none;
-		outline: none;
-		color: #fff;
-		background: #111;
-		cursor: pointer;
-		position: relative;
-		z-index: 0;
-		border-radius: 10px;
-	}
+* {
+  padding:0;
+  margin:0;
+}
 
-	.glow-on-hover:before {
-		content: '';
-		background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-		position: absolute;
-		top: -2px;
-		left:-2px;
-		background-size: 400%;
-		z-index: -1;
-		filter: blur(5px);
-		width: calc(100% + 4px);
-		height: calc(100% + 4px);
-		animation: glowing 20s linear infinite;
-		opacity: 0;
-		transition: opacity .3s ease-in-out;
-		border-radius: 10px;
-	}
+body {
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #CCD1D9;
+}
 
-	.glow-on-hover:active {
-		color: #000
-	}
-
-	.glow-on-hover:active:after {
-		background: transparent;
-	}
-
-	.glow-on-hover:hover:before {
-		opacity: 1;
-	}
-
-	.glow-on-hover:after {
-		z-index: -1;
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: #111;
-		left: 0;
-		top: 0;
-		border-radius: 10px;
-	}
-
-	@keyframes glowing {
-		0% { background-position: 0 0; }
-		50% { background-position: 400% 0; }
-		100% { background-position: 0 0; }
-	}
-</style>
+.button {
+  padding: 16px 42px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+  line-height: 1.25;
+  background: #FC6E51;
+  text-decoration: none;
+  user-select: none;
+  color: white;
+  font-size: 16px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color .6s ease;
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%,-50%,0);
+    background: rgba(white,.1);
+    border-radius: 100%;
+    transition: width .3s ease, height .3s ease;
+  }
+  &:focus,
+  &:hover {
+      background: darken(#FC6E51,7%);
+  }
+  &:active {
+    &:after {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}</style>
