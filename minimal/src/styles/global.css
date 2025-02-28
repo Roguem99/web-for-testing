@@ -20,6 +20,21 @@ html {
     font-size: 2.5rem;
   }
   
+  #page-title-header {
+    color: black;
+    font-size: 4rem;
+  }
+
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(100px);
+	}
+  
   /* nav styles */
   .hamburger {
     padding-right: 20px;
