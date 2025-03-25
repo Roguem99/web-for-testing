@@ -7,7 +7,7 @@ import '../styles/global.css';
 const pageTitle = "Home Page";
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout class="layout" pageTitle={pageTitle}>
 	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 	<Welcome />
 </Layout>

@@ -15,15 +15,11 @@ const skills = ["HTML", "CSS", "JavaScript", "Golang", "Astro", "Java", "Test Au
 const happy = true;
 const finished = true;
 const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <Layout pageTitle={pageTitle}>
   <body>
-    <h1 id=page-title-header>{pageTitle}</h1>
+    <h1 class="page-title-header" id=page-title-header>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
     <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
@@ -49,13 +45,3 @@ const textCase = "uppercase";
 
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
   </body>
-
-<style define:vars={{skillColor, fontWeight, textCase}}>
-
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-
-</style>
