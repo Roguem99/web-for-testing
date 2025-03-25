@@ -1,0 +1,24 @@
+{
+  "name": "min-astrro-validation",
+  "version": "1.0.0",
+  "description": "Testing package for evaluating web-for-testing UX",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roguem99/web-for-testing.git"
+  },
+  "keywords": [
+    "Testing",
+    "Automation",
+    "Playwright"
+  ],
+  "author": "Seth Tarrants",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roguem99/web-for-testing/issues"
+  },
+  "homepage": "https://github.com/Roguem99/web-for-testing#readme"
+}
