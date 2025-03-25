@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Testing package for evaluating web-for-testing UX",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Roguem99/web-for-testing.git"
@@ -20,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Roguem99/web-for-testing/issues"
   },
-  "homepage": "https://github.com/Roguem99/web-for-testing#readme"
+  "homepage": "https://github.com/Roguem99/web-for-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.13"
+  }
 }
