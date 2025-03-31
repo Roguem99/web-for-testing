@@ -1,16 +1,16 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+test.beforeEach(async ({page}) => {
+  await page.goto('');
+});
+``
+test('has title', async ({ page }) => {
+  await expect(page).toHaveTitle(/Home Page/);
 });
 
 test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
 
