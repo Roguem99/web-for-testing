@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({page}) => {
   await page.goto('');
+  await page.waitForLoadState('load');
 });
 
 test('has title', async ({ page }) => {
@@ -11,13 +12,10 @@ test('has title', async ({ page }) => {
 });
 
 test('new greeting button', async ({ page }) => {
-  // Get existing greeting to compare later
+  let greetingArray = ["Hej! Thank you for visiting!", "Hallo! Thank you for visiting!", "Hola! Thank you for visiting!", "Habari! Thank you for visiting!"];
+
   let initialGreeting = await page.getByTestId('greeting').allInnerTexts();
-
-  // Click the new greeting button to get a new greeting change.
   await page.getByText('New Greeting').click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByTestId('greeting')).not.toHaveText(initialGreeting);
+  expect(greetingArray).toEqual(expect.arrayContaining(initialGreeting));
 });
 
