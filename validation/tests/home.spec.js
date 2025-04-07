@@ -15,6 +15,13 @@ test('has light dark toggle', async ({ page }) => {
   await expect(page.getByTestId('icon-moon')).toBeVisible();
 });
 
+test('has page buttons', async ({ page }) => {
+  await expect(page.getByTestId('home-link-btn')).toBeVisible();
+  await expect(page.getByTestId('about-link-btn')).toBeVisible();
+  await expect(page.getByTestId('blog-link-btn')).toBeVisible();
+  await expect(page.getByTestId('tags-link-btn')).toBeVisible();
+});
+
 test('has button that creates new greeting', async ({ page }) => {
   let greetingArray = ["Hej! Thank you for visiting!", "Hallo! Thank you for visiting!", "Hola! Thank you for visiting!", "Habari! Thank you for visiting!"];
 
