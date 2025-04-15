@@ -1,9 +1,9 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-
 test.beforeEach(async ({page}) => {
-  await page.goto('', {waitUntil:"load"});
+  // await page.goto('', {waitUntil:"load"});
+  await page.goto('https://comfy-cannoli-c12022.netlify.app', {waitUntil:"load"});
 });
 
 test('has title', async ({ page }) => {
@@ -23,7 +23,12 @@ test('has page buttons', async ({ page }) => {
 });
 
 test('has button that creates new greeting', async ({ page }) => {
-  let greetingArray = ["Hej! Thank you for visiting!", "Hallo! Thank you for visiting!", "Hola! Thank you for visiting!", "Habari! Thank you for visiting!"];
+  let greetingArray = [
+    "Hej! Thank you for visiting!",
+    "Hallo! Thank you for visiting!",
+    "Hola! Thank you for visiting!",
+    "Habari! Thank you for visiting!"
+  ];
 
   let initialGreeting = await page.getByTestId('greeting').allInnerTexts();
   await page.getByText('New Greeting').click();
