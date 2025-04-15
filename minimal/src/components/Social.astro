@@ -2,13 +2,13 @@
 const { platform, username } = Astro.props;
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a data-testid=`social-${platform}` href={`https://www.${platform}.com/${username}`}>{platform}</a>
 
 <style>
   a {
     padding: 0.5rem 1rem;
     color: white;
-    background-color: #4c1d95;
+    background-color: #9b7714c0;
     text-decoration: none;
   }
 </style>

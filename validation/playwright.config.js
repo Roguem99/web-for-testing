@@ -11,7 +11,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
   reporter: process.env.CI ? 'dot' : 'list',
   use: {
     baseURL: process.env.CI ? 'https://comfy-cannoli-c12022.netlify.app' : 'http://localhost:4321',
