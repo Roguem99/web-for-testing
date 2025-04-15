@@ -7,12 +7,15 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 export default defineConfig({
   testDir: './tests',
-  outputDir: 'test-results',
+  outputDir: 'playwright-report',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 1,
-  reporter: process.env.CI ? 'dot' : 'list',
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: 'playwright-report' }]
+  ],
   use: {
     baseURL: process.env.CI ? 'https://comfy-cannoli-c12022.netlify.app' : 'http://localhost:4321',
     trace: 'on-first-retry',
@@ -65,4 +68,3 @@ export default defineConfig({
   //   gracefulShutdown: { signal: 'SIGTERM', timeout: 500 }
   // },
 });
-
